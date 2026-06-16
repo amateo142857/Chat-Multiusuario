@@ -305,7 +305,7 @@ def mostrar_mensaje_bienvenida(text_widget, usuario):
 
 def Cliente():
     # Conexiones #
-    host = 'localhost'
+    host = 'chat-multiusuario.onrender.com'
     port = 12345
     
     # Socket para las Conexiones con SSL

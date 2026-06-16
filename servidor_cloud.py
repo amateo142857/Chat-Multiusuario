@@ -10,8 +10,8 @@ import sys
 import os 
 
 # Configuración para la nube
-PORT = int(os.environ.get('PORT', 12345))  # Render asigna el puerto
-HOST = '0.0.0.0'  # Escuchar en todas las interfaces 
+port = int(os.environ.get('PORT', 12345))  # Render asigna el puerto
+host = '0.0.0.0'  # Escuchar en todas las interfaces 
 
 # Variable global para controlar la ejecución
 ejecutando = True

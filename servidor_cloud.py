@@ -2,13 +2,12 @@
 # Servidor #
 #!/usr/bin/env python3
 
-import tkinter as tk
 import socket
 import threading
 import ssl
 import signal
 import sys
-
+import os 
 
 # Configuración para la nube
 PORT = int(os.environ.get('PORT', 12345))  # Render asigna el puerto

@@ -9,6 +9,11 @@ import ssl
 import signal
 import sys
 
+
+# Configuración para la nube
+PORT = int(os.environ.get('PORT', 12345))  # Render asigna el puerto
+HOST = '0.0.0.0'  # Escuchar en todas las interfaces 
+
 # Variable global para controlar la ejecución
 ejecutando = True
 
@@ -209,9 +214,6 @@ def cerrar_servidor(socket_servidor, clientes, usuarios):
 def Servidor():
     global ejecutando
     
-    host = 'localhost'
-    port = 12345
-    
     # Configurar manejador de señales
     signal.signal(signal.SIGINT, signal_handler)
     
@@ -220,7 +222,7 @@ def Servidor():
     socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
     try:
-        socket_servidor.bind((host, port))
+        socket_servidor.bind((HOST, PORT))
     except Exception as e:
         print(f"[!] Error al bindear el puerto {port}: {e}")
         return

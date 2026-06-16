@@ -221,7 +221,7 @@ def Servidor():
     socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
     try:
-        socket_servidor.bind((HOST, PORT))
+        socket_servidor.bind((host, port))
     except Exception as e:
         print(f"[!] Error al bindear el puerto {port}: {e}")
         return

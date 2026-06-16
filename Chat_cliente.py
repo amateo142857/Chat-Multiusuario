@@ -311,13 +311,13 @@ def Cliente():
     # Socket para las Conexiones con SSL
     socket_cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
-    # Crear contexto SSL para el cliente
-    context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
-    context.check_hostname = False
-    context.verify_mode = ssl.CERT_NONE
+#    # Crear contexto SSL para el cliente
+#    context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+#    context.check_hostname = False
+#    context.verify_mode = ssl.CERT_NONE
     
     # Envolver el socket con SSL
-    socket_cliente = context.wrap_socket(socket_cliente, server_hostname=host)
+#    socket_cliente = context.wrap_socket(socket_cliente, server_hostname=host)
     
     # Conectar al servidor
     socket_cliente.connect((host, port))

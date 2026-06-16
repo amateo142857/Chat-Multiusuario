@@ -227,15 +227,15 @@ def Servidor():
         return
     
     # Crear contexto SSL
-    try:
-        context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-        context.load_cert_chain(certfile="cert-key/server-cert.pem", keyfile="cert-key/server-key.key")
-        # Envolver el socket con SSL
-        socket_servidor = context.wrap_socket(socket_servidor, server_side=True)
-    except Exception as e:
-        print(f"[!] Error al configurar SSL: {e}")
-        print("[!] Asegúrate de que los archivos server-cert.pem y server-key.key existen")
-        return
+#    try:
+#        context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+#        context.load_cert_chain(certfile="cert-key/server-cert.pem", keyfile="cert-key/server-key.key")
+#        # Envolver el socket con SSL
+#        socket_servidor = context.wrap_socket(socket_servidor, server_side=True)
+#    except Exception as e:
+#        print(f"[!] Error al configurar SSL: {e}")
+#        print("[!] Asegúrate de que los archivos server-cert.pem y server-key.key existen")
+#        return
     
     socket_servidor.listen()
     socket_servidor.settimeout(1.0)  # Timeout para poder verificar ejecutando
